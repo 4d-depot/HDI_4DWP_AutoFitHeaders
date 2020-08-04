@@ -1,0 +1,298 @@
+﻿{
+	"destination": "detailScreen",
+	"windowMinWidth": 1000,
+	"windowMinHeight": 600,
+	"width": 1000,
+	"height": 800,
+	"menuBar": "Menu Bar #1",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "US Letter",
+		"paperWidth": "612pt",
+		"paperHeight": "792pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Tab Control": {
+					"type": "tab",
+					"top": 20,
+					"left": 20,
+					"width": 960,
+					"height": 760,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "TabControl",
+					"dataSourceTypeHint": "arrayText",
+					"labels": [
+						"Page 1",
+						"Page 2"
+					],
+					"action": "GotoPage",
+					"events": [
+						"onClick"
+					]
+				},
+				"btnTrace": {
+					"type": "checkbox",
+					"top": 741,
+					"left": 610,
+					"width": 183,
+					"height": 22,
+					"sizingX": "move",
+					"sizingY": "move",
+					"dataSource": "Form:C1466.trace",
+					"text": "Trace code",
+					"focusable": false,
+					"events": [
+						"onClick"
+					]
+				},
+				"btnHtml": {
+					"type": "button",
+					"top": 741,
+					"left": 40,
+					"width": 180,
+					"height": 23,
+					"sizingY": "move",
+					"text": "Export to HTML",
+					"focusable": false,
+					"method": "ObjectMethods/btnHtml.4dm",
+					"events": [
+						"onClick"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"Button": {
+					"type": "button",
+					"top": 741,
+					"left": 867,
+					"width": 95,
+					"height": 20,
+					"sizingX": "move",
+					"sizingY": "move",
+					"text": "Demo",
+					"focusable": false,
+					"method": "ObjectMethods/Button.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Text10": {
+					"type": "text",
+					"top": 80,
+					"left": 40,
+					"width": 700,
+					"height": 100,
+					"textAlign": "left",
+					"fontFamily": ".SF NS Text",
+					"fontSize": 24,
+					"text": "The height of headers and footers in 4D Write Pro documents are designed to automatically adjust to fit their contents."
+				},
+				"Text4": {
+					"type": "text",
+					"top": 180,
+					"left": 260,
+					"width": 700,
+					"height": 120,
+					"sizingX": "move",
+					"textAlign": "right",
+					"fontFamily": ".SF NS Text",
+					"fontSize": 24,
+					"text": "If the height of the headers or footers increases, the top and bottom margins of the body will move!"
+				},
+				"Text11": {
+					"type": "text",
+					"top": 310,
+					"left": 40,
+					"width": 580,
+					"height": 70,
+					"textAlign": "left",
+					"fontFamily": ".SF NS Text",
+					"fontSize": 24,
+					"text": "As of 4D v18, this behavior can be enabled or disabled according to your needs."
+				},
+				"Text12": {
+					"type": "text",
+					"top": 400,
+					"left": 270,
+					"width": 680,
+					"height": 120,
+					"sizingX": "move",
+					"textAlign": "right",
+					"fontFamily": ".SF NS Text",
+					"fontSize": 24,
+					"text": "By default the \"auto fit\" feature will be activated for new documents. However, it will be deactivated for documents imported from 4D Write (.4d7 documents or BLOBS)."
+				}
+			}
+		},
+		{
+			"objects": {
+				"WParea": {
+					"type": "write",
+					"top": 70,
+					"left": 40,
+					"width": 550,
+					"height": 650,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "WParea",
+					"hideFocusRing": true,
+					"scrollbarVertical": "automatic",
+					"scrollbarHorizontal": "automatic",
+					"zoom": 75,
+					"showPageFrames": true,
+					"method": "ObjectMethods/WParea.4dm",
+					"events": [
+						"onLoad",
+						"onLosingFocus",
+						"onGettingFocus",
+						"onSelectionChange",
+						"onAfterEdit"
+					]
+				},
+				"Text5": {
+					"type": "text",
+					"top": 75,
+					"left": 620,
+					"width": 330,
+					"height": 147,
+					"sizingX": "move",
+					"fontWeight": "bold",
+					"text": "As you can see, with auto fit enabled, the margins defined below could not be applied.\r\rThis is because the headers and footers contain too much text to fit into the available space and were given the height they needed to display their entire content."
+				},
+				"Picture46": {
+					"type": "picture",
+					"top": 515,
+					"left": 911,
+					"width": 32,
+					"height": 32,
+					"sizingX": "move",
+					"pictureFormat": "scaled",
+					"picture": "/RESOURCES/Images/new.png"
+				},
+				"Variable": {
+					"type": "input",
+					"top": 338,
+					"left": 790,
+					"width": 107,
+					"height": 17,
+					"sizingX": "move",
+					"dataSource": "Form:C1466.marginTop",
+					"dragging": "none",
+					"dropping": "custom",
+					"method": "ObjectMethods/Variable.4dm",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Variable1": {
+					"type": "input",
+					"top": 368,
+					"left": 790,
+					"width": 107,
+					"height": 17,
+					"sizingX": "move",
+					"dataSource": "Form:C1466.marginBottom",
+					"dragging": "none",
+					"dropping": "custom",
+					"method": "ObjectMethods/Variable1.4dm",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"Text": {
+					"type": "text",
+					"top": 338,
+					"left": 662,
+					"width": 95,
+					"height": 17,
+					"sizingX": "move",
+					"textAlign": "right",
+					"text": "Top margin:"
+				},
+				"Text1": {
+					"type": "text",
+					"top": 368,
+					"left": 662,
+					"width": 95,
+					"height": 17,
+					"sizingX": "move",
+					"textAlign": "right",
+					"text": "Bottom margin:"
+				},
+				"rb1": {
+					"type": "radio",
+					"top": 431,
+					"left": 684,
+					"width": 267,
+					"height": 20,
+					"sizingX": "move",
+					"dataSource": "Form:C1466.autoFitOn",
+					"text": "Auto fit height ON",
+					"focusable": false,
+					"radioGroup": "Radio1",
+					"method": "ObjectMethods/rb1.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"rb2": {
+					"type": "radio",
+					"top": 521,
+					"left": 684,
+					"width": 267,
+					"height": 20,
+					"sizingX": "move",
+					"dataSource": "Form:C1466.autoFitOff",
+					"text": "Auto fit height OFF",
+					"focusable": false,
+					"radioGroup": "Radio1",
+					"method": "ObjectMethods/rb2.4dm",
+					"events": [
+						"onClick"
+					]
+				},
+				"Text2": {
+					"type": "text",
+					"top": 460,
+					"left": 730,
+					"width": 230,
+					"height": 60,
+					"sizingX": "move",
+					"stroke": "#808080",
+					"fontFamily": ".SF NS Text",
+					"fontSize": 11,
+					"text": "In this mode, the height of headers and footers will be modified automatically in order to display their content."
+				},
+				"Text3": {
+					"type": "text",
+					"top": 550,
+					"left": 730,
+					"width": 230,
+					"height": 60,
+					"sizingX": "move",
+					"stroke": "#808080",
+					"fontFamily": ".SF NS Text",
+					"fontSize": 11,
+					"text": "In this mode, the height of headers and footers will be restricted to their defined values, and their content may be truncated."
+				}
+			}
+		}
+	],
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	}
+}
